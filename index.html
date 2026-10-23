@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HabitForge AI – Buduj lepsze nawyki</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>🔥 HabitForge AI</h1>
+      <p>Buduj nawyki, które naprawdę zostają</p>
+    </header>
+
+    <!-- Ekran startowy -->
+    <section id="start-screen" class="card">
+      <h2>Jaki nawyk chcesz zbudować?</h2>
+      <input type="text" id="habit-input" placeholder="np. Codziennie 20 minut czytania">
+      
+      <label>Jak często?</label>
+      <select id="frequency">
+        <option value="daily">Codziennie</option>
+        <option value="5days">5 dni w tygodniu</option>
+        <option value="3days">3 dni w tygodniu</option>
+        <option value="weekly">Raz w tygodniu</option>
+      </select>
+
+      <label>Poziom trudności</label>
+      <div class="difficulty">
+        <button data-level="easy" class="diff-btn active">Łatwy</button>
+        <button data-level="medium" class="diff-btn">Średni</button>
+        <button data-level="hard" class="diff-btn">Trudny</button>
+      </div>
+
+      <button id="create-btn" class="primary">Stwórz mój plan</button>
+    </section>
+
+    <!-- Ekran główny aplikacji -->
+    <section id="main-screen" class="hidden">
+      <div class="card habit-header">
+        <h2 id="habit-name"></h2>
+        <div class="streak">
+          <span id="streak-count">0</span>
+          <small>dni z rzędu 🔥</small>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Twój plan na dziś</h3>
+        <div id="today-plan"></div>
+        <button id="done-btn" class="primary">✅ Zrobione dzisiaj</button>
+      </div>
+
+      <div class="card">
+        <h3>Postępy (ostatnie 7 dni)</h3>
+        <div id="week-grid" class="week-grid"></div>
+      </div>
+
+      <div class="card tips">
+        <h3>💡 Inteligentna wskazówka</h3>
+        <p id="smart-tip"></p>
+      </div>
+
+      <button id="reset-btn" class="secondary">Zmień nawyk</button>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
